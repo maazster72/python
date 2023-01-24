@@ -1,5 +1,5 @@
 """
-This program plays a game of hangman
+This program is an updated game of hangman that randomly chooses a word
 """
 import random
 
@@ -99,7 +99,12 @@ words = [
 ]
 
 def choose_word():
-    file = open()
+    with open('/Users/maazahmed/GitRepos/python/hangman/EnglishWords.txt') as file:
+        words = [line.rstrip() for line in file]
+        file.close()
+    return(words[random.randint(0,len(words)-1)])
+    
 
-word = choose_word(words)
+# main(word)
+word = choose_word()
 main(word)
